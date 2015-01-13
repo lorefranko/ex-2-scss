@@ -23,7 +23,7 @@ section {
 h1 {
   margin: 80px 0 10px 0;
   font-size: 52px;
-  font-family: arial, sans-serif;
+  font-family: custom-font;
   text-transform: uppercase;
   text-shadow: 1px 1px 0px #DC143C, 2px 2px 0px #DC143C, 3px 3px 0px #DC143C, 4px 4px 0px #DC143C; }
 
@@ -36,14 +36,14 @@ body {
   background: #a9d4e2;
   color: #fff;
   max-width: 640px;
-  font-family: arial, sans-serif;
+  font-family: custom-font;
   font-size: 14px;
   line-height: 1.4;
   font-smoothing: anti-aliased; }
 
 /* line 44, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
 nav {
-  font-family: 'custom-font';
+  font-family: custom-font;
   float: left;
   position: relative;
   top: 0;
