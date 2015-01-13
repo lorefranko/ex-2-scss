@@ -19,7 +19,7 @@ section {
 h1 {
   margin:80px 0 10px 0;
   font-size: 52px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $text-font;
   text-transform: uppercase;
   text-shadow: 1px 1px 0px #DC143C,
   2px 2px 0px #DC143C,
@@ -32,17 +32,17 @@ h2 {
 }
 
 body {
-  background: rgb(169, 212, 226);
-  color: white;
+  background: $background;
+  color: $tittle-color;
   max-width:640px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $text-font;
   font-size: 14px;
   line-height:1.4;
   font-smoothing: anti-aliased;
 }
 
 nav {
-  font-family: "animalitos";
+  font-family: 'custom-font';
   float: left;
   position: relative;
   top: 0;
@@ -59,7 +59,7 @@ nav ul li {
   position: relative;
   width: 70px;
   cursor: pointer;
-  background: rgb(234, 18, 59);
+  background: $nav-ul-text-color;
   text-transform: uppercase;
   transition:all .4s ease-out;
 }
@@ -67,7 +67,7 @@ nav ul li {
 nav ul li:after {
   position: absolute;
   background: #fff;
-  color: rgb(234, 18, 59);
+  color: $nav-ul-text-color;
   top:0;
   left: 70px;
   width: 70px; height: 100%;
@@ -95,7 +95,7 @@ nav ul li:nth-child(4):after {
 }
 
 nav ul li:hover {
-  background-color: #333;
+  background-color: $nav-hover;
   transform: translateX(70px);
 }
 
