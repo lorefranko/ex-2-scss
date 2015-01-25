@@ -1,9 +1,12 @@
-*,*:before,*:after {
-  box-sizing: border-box;
-}
 
-:after {
-  content: "";
+body {
+  background: $background;
+  color: $tittle-color;
+  max-width:640px;
+  font-family: $text-font;
+  font-size: 14px;
+  line-height:1.4;
+  font-smoothing: anti-aliased;
 }
 
 .icon a{
@@ -11,9 +14,12 @@
   font-size: 2em;
 }
 
-section {
-  position: relative;
-  left: 100px;
+.icon nav{
+  @include nav($nav-color, #fff, $nav-hover)
+}
+
+.nav ul li{
+  @include nav-li($nav-ul-text-color)
 }
 
 h1 {
@@ -31,80 +37,6 @@ h2 {
   font-size: 24px;
 }
 
-body {
-  background: $background;
-  color: $tittle-color;
-  max-width:640px;
-  font-family: $text-font;
-  font-size: 14px;
-  line-height:1.4;
-  font-smoothing: anti-aliased;
-}
-
-nav {
-  font-family: $text-font;
-  float: left;
-  position: relative;
-  top: 0;
-  left: 0;
-  background: transparent;
-}
-
-nav ul {
-  text-align: center;
-  list-style-type: none;
-}
-
-nav ul li {
-  position: relative;
-  width: 70px;
-  cursor: pointer;
-  background: $nav-ul-text-color;
-  text-transform: uppercase;
-  transition:all .4s ease-out;
-}
-
-nav ul li:after {
-  position: absolute;
-  background: #fff;
-  color: $nav-ul-text-color;
-  top:0;
-  left: 70px;
-  width: 70px; height: 100%;
-  opacity:.5;
-  transform: perspective(400px) rotateY(90deg);
-  transform-origin: 0 100%;
-  transition:all .4s ease-out;
-}
-
-nav ul li:nth-child(1):after {
-  content: "Zebra";
-  line-height: 88px;
-}
-nav ul li:nth-child(2):after {
-  content: "Turttle";
-  line-height: 88px;
-}
-nav ul li:nth-child(3):after {
-  content: "Duck";
-  line-height: 85px;
-}
-nav ul li:nth-child(4):after {
-  content: "Chick";
-  line-height: 70px;
-}
-
-nav ul li:hover {
-  background-color: $nav-hover;
-  transform: translateX(70px);
-}
-
-nav ul li:hover:after {
-  opacity: 1;
-  transform: perspective(400px) rotateY(0deg) scale(1) ;
-}
-
-
 nav ul li > div {
   display: inline-block;
   padding: 25px 0;
@@ -113,32 +45,3 @@ nav ul li > div {
 
 nav ul li div { position: relative; }
 
-
-/*///////////////////////center buttons/////////////////////////////*/
-
-.container{
-  margin-left: 50%;
-  margin-top: 24%;
-}
-
-.box{
-  font-size: 4em;
-  color: #53150B;
-}
-
-.icon-mouse{
-  -webkit-transform-origin: 50% 107%;
-      transform-origin: 50% 107%;
-  -webkit-animation: grdAiguille 2s linear infinite;
-      animation: grdAiguille 2s linear infinite;
-}
-
-@-webkit-keyframes grdAiguille{
-    0%{-webkit-transform:rotate(0deg);}
-    100%{-webkit-transform:rotate(360deg);}
-}
-
-@keyframes grdAiguille{
-    0%{transform:rotate(0deg);}
-    100%{transform:rotate(360deg);}
-}

@@ -1,0 +1,61 @@
+@mixin nav($bg-color, $color, $hover-color){
+		background-color: $bg-color;
+		font-family: $text-font;
+  	float: left;
+  	position: relative;
+  	top: 0;
+  	left: 0;
+  	background: transparent;
+		display: inline-block;
+		text-decoration: none;
+		color: $color;
+		&:hover{
+			background-color: $hover-color;
+			transform: translateX(70px);
+		}
+}
+
+@mixin nav-li($color){
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  width: 70px;
+  cursor: pointer;
+  background: $color;
+  text-transform: uppercase;
+  transition:all .4s ease-out;
+
+	&:after {
+  position: absolute;
+  background: #fff;
+  color: $color;
+  top:0;
+  left: 70px;
+  width: 70px; height: 100%;
+  opacity:.5;
+  transform: perspective(400px) rotateY(90deg);
+  transform-origin: 0 100%;
+  transition:all .4s ease-out;
+	}
+	&:nth-child(1):after {
+  content: "Zebra";
+  line-height: 88px;
+	}
+	&:nth-child(2):after {
+  content: "Turttle";
+  line-height: 88px;
+	}
+	&:nth-child(3):after {
+  content: "Duck";
+  line-height: 85px;
+	}
+	&:nth-child(4):after {
+  content: "Chick";
+  line-height: 70px;
+	}
+	&:hover:after {
+  opacity: 1;
+  transform: perspective(400px) rotateY(0deg) scale(1) ;
+	}
+}
+

@@ -1,37 +1,7 @@
 /* Are placeholders for sharing information that you want to reuse throughout your stylesheet.
 you can store things like colours, font-stacks or any css value you can think of.
 Variables can declared using '$' */
-/* line 1, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-*, *:before, *:after {
-  box-sizing: border-box; }
-
-/* line 5, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-:after {
-  content: ""; }
-
-/* line 9, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-.icon a {
-  color: white;
-  font-size: 2em; }
-
-/* line 14, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-section {
-  position: relative;
-  left: 100px; }
-
-/* line 19, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-h1 {
-  margin: 80px 0 10px 0;
-  font-size: 52px;
-  font-family: custom-font;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 0px #DC143C, 2px 2px 0px #DC143C, 3px 3px 0px #DC143C, 4px 4px 0px #DC143C; }
-
-/* line 30, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-h2 {
-  font-size: 24px; }
-
-/* line 34, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+/* line 2, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
 body {
   background: #a9d4e2;
   color: #fff;
@@ -41,127 +11,99 @@ body {
   line-height: 1.4;
   font-smoothing: anti-aliased; }
 
-/* line 44, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav {
+/* line 12, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+.icon a {
+  color: white;
+  font-size: 2em; }
+
+/* line 17, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+.icon nav {
+  background-color: #ea123b;
   font-family: custom-font;
   float: left;
   position: relative;
   top: 0;
   left: 0;
-  background: transparent; }
+  background: transparent;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff; }
+  /* line 12, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .icon nav:hover {
+    background-color: #333;
+    -webkit-transform: translateX(70px);
+        -ms-transform: translateX(70px);
+            transform: translateX(70px); }
 
-/* line 53, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul {
+/* line 21, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+.nav ul li {
   text-align: center;
-  list-style-type: none; }
-
-/* line 58, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li {
+  list-style-type: none;
   position: relative;
   width: 70px;
   cursor: pointer;
   background: #ea123b;
   text-transform: uppercase;
   transition: all 0.4s ease-out; }
+  /* line 28, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .nav ul li:after {
+    position: absolute;
+    background: #fff;
+    color: #ea123b;
+    top: 0;
+    left: 70px;
+    width: 70px;
+    height: 100%;
+    opacity: 0.5;
+    -webkit-transform: perspective(400px) rotateY(90deg);
+            transform: perspective(400px) rotateY(90deg);
+    -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+    transition: all 0.4s ease-out; }
+  /* line 40, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .nav ul li:nth-child(1):after {
+    content: "Zebra";
+    line-height: 88px; }
+  /* line 44, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .nav ul li:nth-child(2):after {
+    content: "Turttle";
+    line-height: 88px; }
+  /* line 48, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .nav ul li:nth-child(3):after {
+    content: "Duck";
+    line-height: 85px; }
+  /* line 52, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .nav ul li:nth-child(4):after {
+    content: "Chick";
+    line-height: 70px; }
+  /* line 56, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/mixins */
+  .nav ul li:hover:after {
+    opacity: 1;
+    -webkit-transform: perspective(400px) rotateY(0deg) scale(1);
+            transform: perspective(400px) rotateY(0deg) scale(1); }
 
-/* line 67, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:after {
-  position: absolute;
-  background: #fff;
-  color: #ea123b;
-  top: 0;
-  left: 70px;
-  width: 70px;
-  height: 100%;
-  opacity: 0.5;
-  -webkit-transform: perspective(400px) rotateY(90deg);
-          transform: perspective(400px) rotateY(90deg);
-  -webkit-transform-origin: 0 100%;
-      -ms-transform-origin: 0 100%;
-          transform-origin: 0 100%;
-  transition: all 0.4s ease-out; }
+/* line 25, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+h1 {
+  margin: 80px 0 10px 0;
+  font-size: 52px;
+  font-family: custom-font;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #DC143C, 2px 2px 0px #DC143C, 3px 3px 0px #DC143C, 4px 4px 0px #DC143C; }
 
-/* line 80, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:nth-child(1):after {
-  content: "Zebra";
-  line-height: 88px; }
+/* line 36, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+h2 {
+  font-size: 24px; }
 
-/* line 84, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:nth-child(2):after {
-  content: "Turttle";
-  line-height: 88px; }
-
-/* line 88, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:nth-child(3):after {
-  content: "Duck";
-  line-height: 85px; }
-
-/* line 92, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:nth-child(4):after {
-  content: "Chick";
-  line-height: 70px; }
-
-/* line 97, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:hover {
-  background-color: #333;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px); }
-
-/* line 102, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-nav ul li:hover:after {
-  opacity: 1;
-  -webkit-transform: perspective(400px) rotateY(0deg) scale(1);
-          transform: perspective(400px) rotateY(0deg) scale(1); }
-
-/* line 108, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+/* line 40, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
 nav ul li > div {
   display: inline-block;
   padding: 25px 0;
   background: transparent; }
 
-/* line 114, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
+/* line 46, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
 nav ul li div {
   position: relative; }
-
-/*///////////////////////center buttons/////////////////////////////*/
-/* line 119, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-.container {
-  margin-left: 50%;
-  margin-top: 24%; }
-
-/* line 124, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-.box {
-  font-size: 4em;
-  color: #53150B; }
-
-/* line 129, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-.icon-mouse {
-  -webkit-transform-origin: 50% 107%;
-  -ms-transform-origin: 50% 107%;
-      transform-origin: 50% 107%;
-  -webkit-animation: grdAiguille 2s linear infinite;
-  animation: grdAiguille 2s linear infinite; }
-
-@-webkit-keyframes grdAiguille {
-  /* line 137, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-  0% {
-    -webkit-transform: rotate(0deg); }
-
-  /* line 138, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-  100% {
-    -webkit-transform: rotate(360deg); } }
-
-@keyframes grdAiguille {
-  /* line 142, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-
-  /* line 143, /Users/LorenaFranco/Documents/GDx6/Web 6/ex-2-scss/scss/components/main */
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
 
 @font-face {
   font-family: 'custom-font';
